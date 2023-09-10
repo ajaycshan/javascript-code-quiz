@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Metadata + Linking CSS -->
+<head>
+    <title>JavaScript Code Quiz</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> -->
+</head>
+
+<body>
+     <!-- TODO: Timer -->
+    <header id = "timer">
+        <p> Time Remaining: <span>90</span></p>
+    </header>
+    <br>
+    <main>
+        <!-- TODO: Main Quiz Page -->
+        <section id = "intro">
+            <h1>JavaScript Code Quiz</h1>
+            <p>Put your JavaScript skills to the test with the our quiz!</p>
+            <br>
+            <div id="instructions">
+                <h2>Instructions</h2>
+                <p>
+                    Answer the following JavaScript questions within the time given. Warning: each incorrect answer will see a deduction of <b>10 seconds</b>!
+                </p>
+            </div>
+            <button id="button-start" class="fill-button enlarge illuminate">Start</button>
+            <button id="button-highscores" class="fill-button enlarge illuminate">Check highscores</button>
+        </section>
+        <br>
+       <!-- TODO: Main Quiz Page -->
+        <section id = "main-quiz">
+            <p id="question"></p>
+            <ol>
+                <li id="solution1" class="illuminate"></li>
+                <li id="solution2" class="illumninate"></li>
+                <li id="solution3" class="illumninate"></li>
+                <li id="solution4" class="illuminate"></li>
+            </ol>
+            <p id = "correct-incorrect"></p>
+        </section>
+
+         <!-- TODO: Submission Page -->
+        <section id = "submission">
+            <h2>All done!</h2>
+            <br>
+            <p>Your final score is <b id="user-score"></b>!</p>
+            <br>
+            <p>Enter initials:</p><input type="text" id="your-initials" placeholder="Initials here">
+            <button id="button-submit" class="fill-button enlarge illuminate">Submit score</button>
+            <button class="button-home" class="fill-button enlarge illuminate">Home Page</button>
+        </section>
+        <br>
+        <!-- TODO: Highscores Page -->   
+        <section id = "highscores">
+            <h2>Highscores</h2>
+            <br>
+            <ol id="list-scores"></ol>
+            <br>
+            <button class="button-home" class="fill-button enlarge illuminate">Home Page</button>
+            <button id="button-clear" class="fill-button enlarge illuminate">Clear Highscores</button>
+        </section>
+    </main>
+<script src="assets/js/script.js"></script>
+</body>
+
