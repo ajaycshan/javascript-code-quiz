@@ -11,9 +11,11 @@ The purpose of this project is to create a code quiz that tests a user's knowled
 - Ensure initials and score can be saved after game is over
 
 ## Webpage Preview
-![Webpage Screenshot 1](assets/images/portfolio-webpage-1.png)
-![Webpage Screenshot 2](assets/images/portfolio-webpage-2.png)
-![Webpage Screenshot 3](assets/images/portfolio-webpage-3.png)
+![Webpage Screenshot 1](assets/images/js-code-quiz-webpage-1.png)
+![Webpage Screenshot 2](assets/images/js-code-quiz-webpage-2.png)
+![Webpage Screenshot 3](assets/images/js-code-quiz-webpage-3.png)
+![Webpage Screenshot 4](assets/images/js-code-quiz-webpage-4.png)
+![Webpage Screenshot 5](assets/images/js-code-quiz-webpage-5.png)
 
 ## Link to Deployed Application
 [Deployed Webpage](https://ajaycshan.github.io/ajay-portfolio/)
