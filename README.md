@@ -18,4 +18,4 @@ The purpose of this project is to create a code quiz that tests a user's knowled
 ![Webpage Screenshot 5](assets/images/js-code-quiz-webpage-5.png)
 
 ## Link to Deployed Application
-[Deployed Webpage](https://ajaycshan.github.io/ajay-portfolio/)
+[Deployed Webpage](https://ajaycshan.github.io/javascript-code-quiz/)
