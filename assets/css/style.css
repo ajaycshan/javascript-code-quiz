@@ -1,0 +1,154 @@
+/* Root font + color patterns */
+:root {
+    font-size: 67%;
+    --font-main: 'Fantasy', sans-serif;
+    --black: #021C1D;
+    --lime-green: #a9fa30;
+    --purple: #7310e3a8;
+    --blue: #0828fa;
+    --red: #ef482a;
+    --white: white;
+    --yellow: #fff04efa;
+}
+
+/* Underlying page content appearance */
+body {
+    color: var(--black);
+    font-family: var(--font-main);
+    font-weight: 350;
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 25vw;
+}
+
+/* Main Title */
+h1 {
+    font-weight: 800;
+    font-size: 6rem;
+}
+
+/* Subpage titles */
+h2 {
+    font-weight: 800;
+    font-size: 3.5rem;
+}
+
+/* Button Appearance */
+button {
+    background-color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin: 20px;
+}
+
+.fill-button {
+    border: 1px solid var(--lime-green);
+    width: 230px;
+    font-weight: bold;
+    background-image: linear-gradient(var(--lime-green),var(--red));
+
+}
+
+/* Enlargement of buttons */
+.enlarge { 
+    transition: all .2s ease-in-out; 
+}
+    
+.enlarge:hover { 
+    transform: scale(1.2); 
+}
+
+/* Illuminate when hovering over button */
+.illuminate:hover {
+    background-image: none;
+    border: 1px solid var(--red);
+    box-shadow: 0 0 15px var(--red);
+}
+
+
+
+#timer {
+    display: none;
+    text-align: right;
+}
+
+
+
+#intro p {
+    padding: 20px;
+}
+
+
+/* Hide main quiz by default */
+#main-quiz {
+    display: none;
+}
+
+#main-quiz p, #main-quiz li {
+    text-align: left;
+    margin: 20px 0;
+}
+
+#main-quiz li {
+    background-color: var(--purple);
+    border: 1px solid var(--purple);
+    border-radius: 8px;
+    width: 50vw;
+    padding: 5px 10px;
+}
+
+#correct-incorrect {
+    color: var(--blue);
+}
+
+
+/* Hide Score submission page by default */
+#submission {
+    display: none;
+}
+
+input {
+    padding: 5px 10px;
+    height: 36px;
+    margin: 10px;
+}
+
+/* Hide Highscores page by default */
+#highscores {
+    display: none;
+}
+
+#highscores ol {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+#highscores li {
+    font-weight: bold;
+    background-color: var(--yellow);
+    width: 50vw;
+    margin: 20px 0;
+    padding: 5px 10px;
+}
+
+/* Make page responsive for smaller screens by reducing sizes */
+  
+@media screen and (max-width: 576px) {
+    :root {
+        font-size: 50%;
+    }
+
+    body {
+        margin: 0 10vw;
+    }
+
+    button, .fill-button {
+        width: 50vw;
+    }
+
+    #main-quiz li, #highscores li {
+        width: 80vw;
+    }
+}
