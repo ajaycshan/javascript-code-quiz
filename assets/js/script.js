@@ -23,7 +23,7 @@ var buttonHome = document.getElementById("button-home");
 var buttonHome2 = document.getElementById("button-home-2");
 var buttonClear = document.getElementById("button-clear");
 
-// Question-related variables
+// Section out questions and associated variables
 var questionIndex = 0;
 var questions = [
     {
@@ -81,14 +81,15 @@ var questions = [
         correctSolution: "Console.log"
     }
 ];
+// Section out user choice and solution variables
 var userChoice;
 var correctSolution;
 
-// Timer-related variables
+// Section out timer variables
 var time;
 var secondsRemaining;
 
-// Score-related variables
+// Section out variables in relation to user score + highscores
 var userScore;
 var userInitials;
 var userScoreInitials;
@@ -96,12 +97,11 @@ var highscores = [];
 var sortedHighscores = [];
 
 
-/* ===START-QUIZ=== */
 
-// When start button is clicked, start quiz
+// Event trigger to begin quiz when start button is clicked by user
 buttonStart.addEventListener('click', beginQuiz)
 
-// When quiz is started, start timer and begin asking questions
+// Trigger timer to start when quiz starts and have questions asked to user
 function beginQuiz() {
     timerEl.setAttribute("style", "display:block");
     mainQuizEl.setAttribute("style", "display:block");
@@ -114,6 +114,7 @@ function beginQuiz() {
 
 
 // Start timer and end quiz if timer runs out 
+// Function for timer countdown and stopping quiz if timer runs out. Don't go to negative seconds
 function beginTimer() {
     secondsRemaining = 90;
     time = setInterval(function() {
@@ -127,7 +128,7 @@ function beginTimer() {
     }, 1000);
   }
 
-// Ask a question
+// Runs through quiz questions
 function askQuestion() {
     questionEl.textContent = questions[questionIndex].question;
     solution1El.textContent = questions[questionIndex].choices.a;
@@ -160,7 +161,7 @@ function checkAnswer(event) {
     endQuiz();
 }
 
-// Look at how many questions are left to decide whether to continue quiz
+// Function for exiting out of quiz
 function endQuiz() {
     if (questionIndex < questions.length) {
         askQuestion();
@@ -173,7 +174,7 @@ function endQuiz() {
 
 
 
-// Show user their score
+// Displays user's score
 function displayScore() {
     submissionEl.setAttribute("style", "display:block");
     mainQuizEl.setAttribute("style", "display:none");
@@ -183,14 +184,14 @@ function displayScore() {
     userScoreEl.textContent = userScore;
 }
 
-// Allow user to save their score
+// Allow for user to save score to highscores
 buttonSubmit.addEventListener('click', function(event) {
     event.preventDefault();
     nameScore();
     displaySortedHighscores();
 })
 
-// Create user's score name using their initials and score
+// Take user initials for label on highscore
 function nameScore() {
     userInitials = userInitialsEl.value;
 
@@ -219,12 +220,12 @@ function sortScore() {
     userInitialsEl.value = "";
 }
 
-// Save user's score in list of high scores in local storage
+// Function for storing high scores to local storage
 function saveSortedScores() {
     localStorage.setItem("sortedHighscores", JSON.stringify(sortedHighscores));
 }
 
-// Show list of high scores
+// Function for showing list of high scores
 function displaySortedHighscores() {
     highscoresEl.setAttribute("style", "display:block");
     introEl.setAttribute("style", "display:none");
@@ -250,10 +251,10 @@ function displaySortedHighscores() {
     }
 }
 
-// Show list of scores when clicked
+// Display scores when check highscores button is clicked
 buttonHighscores.addEventListener('click', displaySortedHighscores);
 
-// Clear list of scores when clicked
+// Clear list of highscores
 buttonClear.addEventListener('click', function() {
     listScoresEl.innerHTML = "No scores yet. Be the first!";
     highscores = "";
@@ -261,9 +262,7 @@ buttonClear.addEventListener('click', function() {
     localStorage.clear();
 })
 
-
-/* ===RESTART-QUIZ=== */
-
+// Restarting quiz
 buttonHome.addEventListener('click', restartQuiz)
 
 buttonHome2.addEventListener('click', restartQuiz)
